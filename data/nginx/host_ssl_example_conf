@@ -1,18 +1,4 @@
 server {
-    listen 80;
-    server_name example.org;
-    server_tokens off;
-
-    location /.well-known/acme-challenge/ {
-        root /var/www/certbot;
-    }
-
-    location / {
-        return 301 https://$host$request_uri;
-    }
-}
-
-server {
     add_header Access-Control-Allow-Origin *;
     add_header Access-Control-Allow-Methods "GET,HEAD,OPTIONS,POST,PUT,DELETE,PATCH";
     add_header Access-Control-Allow-Headers "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers";

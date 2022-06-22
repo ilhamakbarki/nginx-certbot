@@ -37,6 +37,7 @@ docker-compose run --rm --entrypoint "\
     -subj '/CN=localhost'" certbot
 echo
 
+mv ./data/nginx/host_ssl.conf ./data/nginx/host_ssl
 
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
@@ -76,5 +77,8 @@ docker-compose run --rm --entrypoint "\
     --force-renewal" certbot
 echo
 
-echo "### Reloading nginx ..."
-docker-compose exec nginx nginx -s reload
+mv ./data/nginx/host_ssl ./data/nginx/host_ssl.conf
+
+echo "### Reloading system..."
+docker-compose stop
+docker-compose up -d

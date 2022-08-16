@@ -84,3 +84,4 @@ fi
 echo "### Reloading system..."
 docker compose stop;
 docker compose up -d;
+echo "### NGINX-Certbot SUCCESS RUNNING..."

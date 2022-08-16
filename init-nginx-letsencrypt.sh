@@ -5,10 +5,13 @@ if ! [ -x "$(command -v docker -v)" ]; then
     exit 1
 fi
 
-domains=(cjgoadmin.cjinfinity.com cjgoapi.cjinfinity.com cjgoapi-dev.cjinfinity.com cjgoadmin-dev.cjinfinity.com)
+# Change this variable with yours
+domains=(example.com)
+email="youremail@example.com" # Adding a valid address is strongly recommended
+# End of change this variable with yours
+
 rsa_key_size=4096
 data_path="./data/certbot"
-email="ilhamakbarki@gmail.com" # Adding a valid address is strongly recommended
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
 generate="1"
